@@ -4,6 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <title>Vimal William</title>
+    
 
     <meta name="author" content="Jon Barron">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,16 +20,13 @@
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr style="padding:0px">
               <td style="padding:2.5%;width:63%;vertical-align:middle">
-                <p class="name" style="text-align: center;">
-                  Vimal William
-                </p>
-                <p style="text-align: justify;">&nbsp;&nbsp;&nbsp;&nbsp;I am a Software Engineer in an US-based startup at <a href="https://en.wikipedia.org/wiki/Bangalore">Bangalore</a> with the expertise in <a href="https://en.wikipedia.org/wiki/Artificial_intelligence">Artificial Intelligence</a> and 
-                  <a href="https://en.wikipedia.org/wiki/Embedded_system">Embedded System</a>. I also worked with low-latency Streaming pipelines with <a href="https://en.wikipedia.org/wiki/GStreamer">GStreamer</a> 
-                  and Hardware accelerated video compression methods. 
+                <p class="name" style="text-align: center;" id="dynamicTitle">I'm, Vimal William!</p>
+                <p style="text-align: justify;">&nbsp;&nbsp;&nbsp;&nbsp;I am a System Software Engineer specializing in Edge-AI at a US-based startup. My current focus is on developing a state-of-the-art <a href="https://en.wikipedia.org/wiki/AI_accelerator">Network Accelerator</a>. 
+                  I am actively involved in creating an NN-Optimizer, encompassing tasks such as pruning, quantization and also delving into compiler development for the accelerator.
                 </p>
                 <p style="text-align: justify;">
                             Previously, I was a Research Intern at <a href="https://www.ceeri.res.in/">Central Electronics Engineering Research Institute</a> and <a href="https://rbcdsai.iitm.ac.in/"> Robert Bosch Centre for Data Science and Artificial Intelligence</a>.
-                  I completed my bachelor's degree in Electronics and Communication Engineering at <a href="https://www.annauniv.edu/">Anna University</a> and I was awarded with the Change Maker's Award by <a href="https://en.wikipedia.org/wiki/Rotaract">Rotaract</a>.
+                  I completed my bachelor's degree in Electronics and Communication Engineering at <a href="https://www.annauniv.edu/">Anna University</a>.
                 </p>
                 <p style="text-align:center">
                   <a href="mailto:vimalwilliam99@gmail.com">Email</a> &nbsp;|&nbsp;
@@ -47,12 +45,44 @@
               <td style="padding:20px;width:100%;vertical-align:middle">
                 <h2>Research and Projects</h2>
                 <p>
-                  I'm interested in Edge Artificial Intelligence, Hardware-accelerated Image & Signal Processing methods, Computer Vision, Neural Network Compression & Optimization techniques and Heterogeneous Computing.
+                  I'm currently working in Software/Hardware Co-design for AI acceleration in Edge devices. The areas includes Compression & Optimization of Neural Network, 
+                  AI Compilers and SW - based NN acceleration.
                 </p>
               </td>
             </tr>
           </tbody></table>
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+
+            <tr onmouseout="vstream_stop()" onmouseover="vstream_start()">
+              <td style="padding:20px;width:25%;vertical-align:middle">
+                <div class="one">
+                  <div class="two" id='lssr_image'>
+                    <img src='images/vstream.jpeg' width="160"></div>
+                  <img src='images/vstream.jpeg' width="160">
+                </div>
+                <script type="text/javascript">
+                  function vstream_start() {
+                    document.getElementById('lssr_image').style.opacity = "1";
+                  }
+
+                  function vstream_stop() {
+                    document.getElementById('lssr_image').style.opacity = "0";
+                  }
+                  vstream_stop()
+                </script>
+              </td>
+              <td style="padding:20px;width:75%;vertical-align:middle">
+                <p style="text-align: justify;"> <a href="https://github.com/VimalWill/Vstream-YoLoV8-GStreamer" target="_blank">
+                  <papertitle>Vstream: Gstreamer-based Video Analytics Pipeline</papertitle>
+                </a> <br>It's an intelligent streaming pipeline constructed on top of the Gstreamer software stack. 
+                Infera is an AI-based inference engine developed with a combination of OpenCV and OpenCL, 
+                facilitating adaptive hardware deployment (CPU & GPU) for object detection models. 
+                Unit tests have been integrated into Vstream using Google's C++ Unit Test framework. 
+                This addition aids in efficient debugging and enables smooth deployments on local machines.
+                <br><br><b>Keywords:</b> <em>Neural Networks, GStreamer, Object Detection</em></p>
+              </td>
+            </tr> 
       
 
             <tr onmouseout="bci_stop()" onmouseover="bci_start()">
@@ -123,5 +153,14 @@
         </td>
       </tr>
     </table>
+
+    <script>
+      var names = ["an Engineer", "a Researcher", "a Programmer","Vimal William"];
+      setInterval(() => {
+          var randomIndex = Math.floor(Math.random() * names.length);
+          var randomName = names[randomIndex];
+          document.getElementById('dynamicTitle').innerText = 'I\'m ' + randomName + '!';
+      }, 1500);
+  </script>
   </body>
 </html>
