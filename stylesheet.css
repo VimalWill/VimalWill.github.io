@@ -29,8 +29,8 @@ p {
   color: #666;
 }
 .project {
-  margin-top: 30px;
-  padding-top: 20px;
+  margin-top: 1px;
+  padding-top: 1px;
   border-top: 0.5px solid #f9f9f9;
 }
 .project-item {
@@ -101,4 +101,16 @@ p {
 .publication-keywords {
   font-size: 14px;
   color: #999;
+}
+.linkedin-icon {
+  width: 30px; /* Adjust size as needed */
+  height: 30px;
+  margin-right: 10px; /* Adjust spacing as needed */
+  fill: #090a0a; /* Adjust color as needed */
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
