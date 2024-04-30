@@ -7,7 +7,7 @@ body {
 .container {
   max-width: 800px;
   margin: 20px auto;
-  background-color: #e7e3e3;
+  background-color: #f9f9f9;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -31,7 +31,7 @@ p {
 .project {
   margin-top: 30px;
   padding-top: 20px;
-  border-top: 0.5px solid #ada8a8;
+  border-top: 0.5px solid #f9f9f9;
 }
 .project-item {
   margin-bottom: 20px;
@@ -78,4 +78,27 @@ p {
 }
 .commit-message {
   font-weight: lighter;
+}
+
+.publications {
+  background-color: #e7e1e1;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.publication-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.publication-details {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.publication-keywords {
+  font-size: 14px;
+  color: #999;
 }
