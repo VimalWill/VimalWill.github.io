@@ -1,157 +1,82 @@
 <!DOCTYPE HTML>
 <html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vimal William</title>
+  <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Hello, I'm Vimal William!</h1>
+    <img src="images/vimal_circle.jpeg" alt="profile photo" class="profile-pic">
+    <p>
+      I'm a system software engineer with the areas focused such as SW stack for accelerated AI systems and domain specific systems. My research invloves in enabling sparsity support
+      for <a href="https://developer.nvidia.com/deep-learning-accelerator">Deep Learning Accelerators</a>, AI compilers and also works in approximated computing to reduce energy cost for local AI inference.
+    </p>
+    <p>
+      Previously, I worked as research intern at <a href="https://www.ceeri.res.in/">Central Electronics Engineering Research Institute</a> and <a href="https://rbcdsai.iitm.ac.in/">
+        Robert Bosch Centre for AI and DS</a> in the areas of reinforcement learning and Brain - computer interface.
+    </p>
+    <div class="project">
+      <h2>Open-Source Projects</h2>
+      <div class="project-item">
+        <div class="project-info">
+          <a href="https://github.com/VimalWill/Vstream-YoLoV8-GStreamer" target="_blank">Vstream: Gstreamer-based Video Analytics Pipeline</a>
+          <p>
+            It's an intelligent streaming pipeline constructed on top of the Gstreamer software stack. Infera is an AI-based inference engine developed with a combination of OpenCV and OpenCL, facilitating adaptive hardware deployment (CPU & GPU) for object detection models.
+          </p>
+          <p class="keywords">
+            Keywords: Neural Networks, GStreamer, Object Detection
+          </p>
+        </div>
+      </div>
+      <!-- Additional project items here... -->
+    </div>
+    <hr>
+    <div class="news">
+      <h2>Project Newsletters</h2>
+      <div class="commit-graph" id="commit-graph"></div>
+    </div>
+    <div class="footer">
+      Feel free to get the website's <a href="https://github.com/VimalWill/VimalWill.github.io">source code</a>.
+    </div>
+  </div>
 
-    <title>Vimal William</title>
-    
+  <script>
+    const username = "VimalWill";
+    const token = "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";
+    const repos = ["Iris", "Vstream"]; // Add your repository names here
+    const commitGraph = document.getElementById("commit-graph");
 
-    <meta name="author" content="Jon Barron">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    repos.forEach(repo => {
+      fetch(`https://api.github.com/repos/${username}/${repo}/commits`, {
+        headers: {
+          Authorization: `token ${token}`
+        }
+      })
+        .then(response => response.json())
+        .then(commits => {
+          const repoHeader = document.createElement("h3");
+          repoHeader.textContent = `Commits from ${repo}`;
+          commitGraph.appendChild(repoHeader);
 
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
-  </head>
-
-  <body>
-    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-      <tr style="padding:0px">
-        <td style="padding:0px">
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr style="padding:0px">
-              <td style="padding:2.5%;width:63%;vertical-align:middle">
-                <p class="name" style="text-align: center;">I'm Vimal William!</p>
-                <p style="text-align: justify;">&nbsp;&nbsp;&nbsp;&nbsp;I am a System Software Engineer specializing in Edge-AI at a US-based startup. My current focus is on developing a state-of-the-art <a href="https://en.wikipedia.org/wiki/AI_accelerator">Network Accelerator</a>. 
-                  I am actively involved in creating an NN-Optimizer, encompassing tasks such as pruning, quantization and also delving into compiler development for the accelerator.
-                </p>
-                <p style="text-align: justify;">
-                            Previously, I was a Research Intern at <a href="https://www.ceeri.res.in/">Central Electronics Engineering Research Institute</a> and <a href="https://rbcdsai.iitm.ac.in/"> Robert Bosch Centre for Data Science and Artificial Intelligence</a>.
-                  I completed my bachelor's degree in Electronics and Communication Engineering at <a href="https://www.annauniv.edu/">Anna University</a>.
-                </p>
-                <p style="text-align:center">
-                  <a href="mailto:vimalwilliam99@gmail.com">Email</a> &nbsp;|&nbsp;
-                  <a href="https://www.linkedin.com/in/vimal-william-6b24b0165/">LinkedIn</a> &nbsp;|&nbsp;
-                  <a href="https://scholar.google.com/citations?user=scallioAAAAJ&hl=en">Google Scholar</a> &nbsp;|&nbsp;
-                  <a href="https://github.com/VimalWill">Github</a>
-                </p>
-              </td>
-              <td style="padding:2.5%;width:40%;max-width:40%">
-                <a href="images/vimal.jpeg"><img style="width:100%;max-width:100%" alt="profile photo" src="images/vimal_circle.jpeg" class="hoverZoomLink"></a>
-              </td>
-            </tr>
-          </tbody></table>
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-              <tr>
-              <td style="padding:20px;width:100%;vertical-align:middle">
-                <h2>Research and Projects</h2>
-                <p>
-                  I'm currently working in Software/Hardware Co-design for AI acceleration in Edge devices. The areas includes Compression & Optimization of Neural Network, 
-                  AI Compilers and SW - based NN acceleration.
-                </p>
-              </td>
-            </tr>
-          </tbody></table>
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-
-
-            <tr onmouseout="vstream_stop()" onmouseover="vstream_start()">
-              <td style="padding:20px;width:25%;vertical-align:middle">
-                <div class="one">
-                  <div class="two" id='lssr_image'>
-                    <img src='images/vstream.jpeg' width="160"></div>
-                  <img src='images/vstream.jpeg' width="160">
-                </div>
-                <script type="text/javascript">
-                  function vstream_start() {
-                    document.getElementById('lssr_image').style.opacity = "1";
-                  }
-
-                  function vstream_stop() {
-                    document.getElementById('lssr_image').style.opacity = "0";
-                  }
-                  vstream_stop()
-                </script>
-              </td>
-              <td style="padding:20px;width:75%;vertical-align:middle">
-                <p style="text-align: justify;"> <a href="https://github.com/VimalWill/Vstream-YoLoV8-GStreamer" target="_blank">
-                  <papertitle>Vstream: Gstreamer-based Video Analytics Pipeline</papertitle>
-                </a> <br>It's an intelligent streaming pipeline constructed on top of the Gstreamer software stack. 
-                Infera is an AI-based inference engine developed with a combination of OpenCV and OpenCL, 
-                facilitating adaptive hardware deployment (CPU & GPU) for object detection models. 
-                Unit tests have been integrated into Vstream using Google's C++ Unit Test framework. 
-                This addition aids in efficient debugging and enables smooth deployments on local machines.
-                <br><br><b>Keywords:</b> <em>Neural Networks, GStreamer, Object Detection</em></p>
-              </td>
-            </tr> 
-      
-
-            <tr onmouseout="bci_stop()" onmouseover="bci_start()">
-              <td style="padding:20px;width:25%;vertical-align:middle">
-                <div class="one">
-                  <div class="two" id='lssr_image'>
-                    <img src='images/bci.jpg' width="160"></div>
-                  <img src='images/bci.jpg' width="160">
-                </div>
-                <script type="text/javascript">
-                  function bci_start() {
-                    document.getElementById('lssr_image').style.opacity = "1";
-                  }
-
-                  function bci_stop() {
-                    document.getElementById('lssr_image').style.opacity = "0";
-                  }
-                  bci_stop()
-                </script>
-              </td>
-              <td style="padding:20px;width:75%;vertical-align:middle">
-                <p style="text-align: justify;"> <a href="https://github.com/VimalWill/Brain-Computer-Interface" target="_blank">
-                  <papertitle>Deep Learning Architecture for Motor Imagery Signal Translation</papertitle>
-                </a> <br>Neural signals from the human brain are primarily gathered from the "Motor Cortex," a region responsible for coordinating muscular movements throughout the entire body. These collected signals undergo processing in the Fourier domain, after which they are translated into corresponding muscular activities based on predictions made by a neural network model.
-                <br><br><b>Keywords:</b> <em>Neural Networks, TensorFlow, Signal Processing, Brain-Computer Interface</em></p>
-              </td>
-            </tr> 
-
-
-            <tr onmouseout="mfcc_stop()" onmouseover="mfcc_start()">
-              <td style="padding:20px;width:25%;vertical-align:middle">
-                <div class="one">
-                  <div class="two" id='lssr_image'>
-                    <img src='images/mfcc.jpg' width="160"></div>
-                  <img src='images/mfcc.jpg' width="160">
-                </div>
-                <script type="text/javascript">
-                  function mfcc_start() {
-                    document.getElementById('lssr_image').style.opacity = "1";
-                  }
-
-                  function mfcc_stop() {
-                    document.getElementById('lssr_image').style.opacity = "0";
-                  }
-                  mfcc_stop()
-                </script>
-              </td>
-              <td style="padding:20px;width:75%;vertical-align:middle">
-                <p style="text-align: justify;"> <a href="https://ieeexplore.ieee.org/abstract/document/9744231" target="_blank">
-                  <papertitle>Reverser Engineering on MFCC Algorithm</papertitle>
-                </a> <br>The process involves reconstructing Mel-frequency cepstral coefficients (MFCC) for understanding the process flow. Window functions, such as Kaiser and Blackman, play a crucial role in mitigating energy leakage in the signal spectrum. By applying multiple windows, we observe variations in energy leakage, leading to improved signal processing. The results highlight that Kaiser and Blackman windows are effective, enabling better feature engineering by eliminating unwanted signal artifacts.
-                <br><br><b>Keywords:</b> <em>Mel filter banks, Blackman window, Fourier Transforms</em></p>
-              </td>
-            </tr> 
-          </tbody></table>
-
-          
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-              <td style="padding:0px">
-                <br>
-                <p style="text-align:right;font-size:small;">
-                  Feel free to get website's <a href="https://github.com/VimalWill/VimalWill.github.io">source code</a>.
-                </p>
-              </td>
-            </tr>
-          </tbody></table>
-        </td>
-      </tr>
-    </table>
-  </body>
+          commits.slice(0, 3).forEach(commit => {
+            const commitNode = document.createElement("div");
+            commitNode.classList.add("commit-node");
+            commitNode.innerHTML = `
+              <span class="commit-id">${commit.sha.slice(0, 7)}</span>
+              <br>
+              <span class="commit-message">${commit.commit.message}</span>
+              <br><br>
+            `;
+            commitGraph.appendChild(commitNode);
+          });
+        })
+        .catch(error => {
+          console.error(`Error fetching commits for ${repo}:`, error);
+        });
+    });
+  </script>
+</body>
 </html>
